@@ -9,8 +9,8 @@ app.get('/', (req, res) => {
 });
 
 // Démarrer le serveur
-app.listen(port, () => {
-  console.log(`Le serveur écoute sur le port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Le serveur écoute sur le port ${port}`);
+// });
 
 module.exports = app
