@@ -14,11 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Pull docker image
-        run: docker pull oualidrahhouti/devops:1.0
+      - name: Login to Docker Hub
+        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
-      - name: Run docker container
-        run: docker run oualidrahhouti/devops:1.0
+      - name: Build docker image
+        run: docker build oualidrahhouti/devops:1.0
+
+      - name: Push docker image
+        run: docker push oualidrahhouti/devops:1.0
   
       - name: Run Tests
         run: |
