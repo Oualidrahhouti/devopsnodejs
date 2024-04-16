@@ -18,7 +18,7 @@ jobs:
         run: docker pull oualidrahhouti/devops:1.0
 
       - name: Run docker container
-        run: docker run oualidrahhouti/devops
+        run: docker run oualidrahhouti/devops:1.0
   
       - name: Run Tests
         run: |
