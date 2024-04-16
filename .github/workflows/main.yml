@@ -13,6 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+
+      - name: Pull docker image
+        run: docker pull oualidrahhouti/devops
+
+      - name: Run docker container
+        run: docker run oualidrahhouti/devops
+  
       - name: Run Tests
         run: |
           npm install 
